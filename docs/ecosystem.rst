@@ -139,6 +139,7 @@ GUIs for Desktop, Mobile, Web
 * `Wormhole William Mobile <https://github.com/psanford/wormhole-william-mobile>`_ for Android and iOS.
 * `Rymdport <https://github.com/Jacalz/rymdport>`_ is a cross-platform graphical desktop application based on wormhole-william.
 * `Wyrmhole <https://github.com/ClaytonWas/wyrmhole>`_, is a cross-platform GUI using Tauri designed for managing many bulk file transfers simultaneously based on the Rust implementation.
+* `wormhole.page <https://wormhole.page>`_ is a Web client (using wormhole-rs via WASM)
 
 
 Non-File-Transfer Uses
