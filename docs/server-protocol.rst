@@ -53,8 +53,12 @@ A server may offer multiple different versions.
 
 The following versions exist:
 
-- ``/v1/``: the first published version
-- ``/v2/``: introduces a ``"you"`` key in the ``"welcome"`` message. ``"you"`` points at a ``dict`` containing an integer ``"port"`` number, and either an ``"ipv4"`` or ``"ipv6"`` containing a string representation of the IPv4 or IPv6 address that you are visible to the server as.
+``/v1/``
+~~~~~~~~
+
+This is the first public version, and still  (as of May, 2026) the only deployed version.
+
+- after server version **0.8.0**, the ``"welcome"`` message may include a ``"your-address"`` key.
 
 
 Application IDs
@@ -141,6 +145,7 @@ respectively) that all subsequent messages will be scoped to.
 
 The first thing the server sends to each client is the ``welcome`` message.
 This is intended to deliver important status information to the client that might influence its operation.
+Clients SHOULD ignore any extra keys in the Welcome message.
 The Python client currently reacts to the following keys (and ignores all others):
 
 -  ``current_cli_version``: prompts the user to upgrade if the server’s
@@ -154,6 +159,11 @@ The Python client currently reacts to the following keys (and ignores all others
    ticket or other authorization record, the server can send ``error``
    (explaining the requirement) if it does not see this ticket arrive
    before the ``bind``.
+- ``your-address``: a ``dict`` containing an integer ``"port"``
+  number, and either an ``"ipv4"`` or ``"ipv6"`` containing a string
+  representation of the IPv4 or IPv6 address that you are visible to
+  the server as.
+
 
 .. seqdiag::
 
